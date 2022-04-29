@@ -47,9 +47,10 @@ wget -P target/linux/generic/hack-5.10/ https://github.com/immortalwrt/immortalw
 #patch -p1 <../PATCH/dnsmasq/luci-add-filter-aaaa-option.patch
 #cp -f ../PATCH/dnsmasq/900-add-filter-aaaa-option.patch ./package/network/services/dnsmasq/patches/900-add-filter-aaaa-option.patch
 # BBRv2
-patch -p1 <../PATCH/BBRv2/openwrt/openwrt-kmod-bbr2.patch
 cp -rf ../PATCH/BBRv2/kernel/* ./target/linux/generic/hack-5.10/
-wget -qO - https://github.com/openwrt/openwrt/commit/cfaf039.patch | patch -p1
+cp -rf ../PATCH/BBRv2/openwrt/package ./
+wget -qO - https://github.com/openwrt/openwrt/commit/7db9763.patch | patch -p1
+
 # PRJC
 #cp -f ../PATCH/PRJC/960-prjc_v5.10-lts-r3.patch ./target/linux/generic/hack-5.10/960-prjc_v5.10-lts-r3.patch
 #echo '
